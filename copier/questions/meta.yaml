@@ -1,0 +1,45 @@
+---
+project:
+  type: yaml
+  multiline: true
+  help: |
+    Struct describing project information respecting schema in
+    'jsonschema/project.json'.
+    For instance:
+    ```
+    name: My Awesome Project
+    baseURL: https://git.domain.tld/username
+    slug: my-awesome-project
+    desc: |
+      My awesome project description
+    ```
+  validator: "{{ project | jsonschema('schemas/project.json') }}"
+
+licenses:
+  type: yaml
+  multiline: true
+  help: |
+    A set of key values respecting schema in 'jsonschema/licenses.json'.
+    For instance:
+    ```
+    date:
+      firstYear: 2025
+      lastYear: 2100
+    primary: MIT
+    secondaries:
+      - BEERWARE
+    ```
+  validator: "{{ licenses | jsonschema('schemas/licenses.json') }}"
+
+copyright:
+  type: yaml
+  multiline: true
+  help: |
+    A set of key values respecting schema in 'jsonschema/copyright.json' to
+    specify copyright hold information.
+    For instance:
+    ```
+    name: Jon Doe
+    mail: jon.doe@domain.tld
+    ```
+  validator: "{{ copyright | jsonschema('schemas/copyright.json') }}"

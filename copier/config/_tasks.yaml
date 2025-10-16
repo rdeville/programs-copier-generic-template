@@ -1,0 +1,5 @@
+---
+_tasks:
+  - command:
+      - "{{ _copier_conf.src_path }}/copier/tasks/copierRun"
+      - "{{ _copier_operation }}"

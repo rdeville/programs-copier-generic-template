@@ -1,0 +1,23 @@
+---
+# Copier basic configurations
+_answers_file: .copier.yaml
+_envops:
+  keep_trailing_newline: false
+_jinja_extensions:
+  - jinja2.ext.debug
+  - jinja2.ext.loopcontrols
+  - jinja2_time.TimeExtension
+  - jinja2_jsonschema.JsonSchemaExtension
+  # Copier extension to load custom extensions
+  - copier_template_extensions.TemplateExtensionLoader
+  - extensions/slugify.py:SlugifyExtension
+  - extensions/gitignore.py:GitignoreExtension
+_min_copier_version: 9.10.0
+_subdirectory: template
+_templates_suffix: .jinja2
+
+---
+!include copier/config/*.yaml
+
+---
+!include copier/questions/*.yaml
