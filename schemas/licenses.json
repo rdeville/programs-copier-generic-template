@@ -1,0 +1,46 @@
+{
+  "$id": "license",
+  "title": "license",
+  "description": "Schema to valid license key in copier",
+  "type": "object",
+  "properties": {
+    "required": [
+      "date",
+      "primary"
+    ],
+    "date": {
+      "type": "object",
+      "required": [
+        "firstYear"
+      ],
+      "properties": {
+        "firstYear": {
+          "type": "integer",
+          "description": "First year of existence of the project"
+        },
+        "lastYear": {
+          "type": "integer",
+          "description": "Last Year of existence of the project"
+        }
+      }
+    },
+    "primary": {
+      "enum": [
+        "MIT",
+        "BEERWARE",
+        "COPYRIGHT"
+      ],
+      "description": "ID of the primary license among supported license"
+    },
+    "secondaries": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "MIT",
+          "BEERWARE",
+          "COPYRIGHT"
+        ]
+      }
+    }
+  }
+}

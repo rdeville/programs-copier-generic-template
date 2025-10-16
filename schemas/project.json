@@ -1,0 +1,25 @@
+{
+  "$id": "license",
+  "title": "license",
+  "description": "Schema to valid license key in copier",
+  "type": "object",
+  "properties": {
+    "required": [
+      "name",
+      "baseURL",
+      "slug"
+    ],
+    "name": {
+      "type": "string"
+    },
+    "baseURL": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "desc": {
+      "type": "string"
+    }
+  }
+}
