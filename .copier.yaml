@@ -1,0 +1,30 @@
+---
+# Changes here will be overwritten by Copier
+_commit: v0.0.0-31-gcd4e515
+_src_path: .
+copyright:
+  mail: code@romaindeville.fr
+  name: Romain Deville
+gitignores:
+  - Global/Archives
+  - Global/Backup
+  - Global/Cursor
+  - Global/Diff
+  - Global/Emacs
+  - Global/JetBrains
+  - Global/Linux
+  - Global/macOS
+  - Global/PuTTY
+  - Global/Vim
+  - Global/VisualStudioCode
+  - Global/Xcode
+licenses:
+  date:
+    firstYear: 2025
+  primary: MIT
+  secondaries:
+    - BEERWARE
+project:
+  baseURL: https://framagit.org/rdeville-public/programs/copier-generic-template
+  name: Copier Generic Template
+  slug: copier-generic-template

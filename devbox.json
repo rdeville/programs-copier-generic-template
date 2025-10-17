@@ -1,0 +1,21 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jetpack-io/devbox/main/.schema/devbox.schema.json",
+  "packages": {
+    "python": "latest",
+    "uv": "latest"
+  },
+  "env": {
+    "VENV_DIR": ".devbox/venv/copier"
+  },
+  "shell": {
+    "init_hook": [
+      "source $VENV_DIR/bin/activate",
+      "uv tool install \\",
+      "  --with jinja2-time \\", 
+      "  --with copier-template-extensions \\",
+      "  --with jinja2-jsonschema \\",
+      "  --with requests \\",
+      "  copier"
+    ]
+  }
+}

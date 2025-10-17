@@ -1,0 +1,52 @@
+{%- set licenseURL = project.baseURL + "/" + project.slug + "/blob/main/LICENSE" %}
+# 👋 Welcome to {{ project.name }}
+
+<!-- markdownlint-disable MD033-->
+<center>
+
+{% if "secondaries" in licenses and licenses.secondaries | length > 0 -%}
+[![Licenses: ({{ licenses.primary }} OR {{  licenses.secondaries | join(" OR ") }})][license_badge]][license_url]
+{% else -%}
+[![License: {{ licenses.primary }})][license_badge]][license_url]
+{% endif -%}
+[![Changelog][changelog_badge]][changelog_badge_url]
+
+</center>
+<!-- markdownlint-enable MD033-->
+
+{% if "secondaries" in licenses and licenses.secondaries | length > 0 -%}
+[license_badge]: https://img.shields.io/badge/Licenses-{{ licenses.primary }}%20OR%20{{ licenses.secondaries | join("%20OR%20") }}-blue
+{% else -%}
+[license_badge]: https://img.shields.io/badge/License-{{ licenses.primary }}-blue
+{% endif -%}
+[license_url]: {{ licenseURL }}
+[changelog_badge]: https://img.shields.io/badge/Changelog-Python%20Semantic%20Release-yellow
+[changelog_badge_url]: https://github.com/python-semantic-release/python-semantic-release
+
+---
+
+## 📝 License
+
+{% if licenses.date.firstYear | string == '%Y' | strftime -%}
+Copyright © {{ licenses.date.firstYear }}, {{ copyright.name }} <{{ copyright.mail }}>
+{%- else -%}
+Copyright © {{ licenses.date.firstYear }} - {{ '%Y' | strftime }}, {{ copyright.name }} <{{ copyright.mail }}>
+{%- endif %}
+
+{% if "secondaries" in licenses and licenses.secondaries | length > 0 -%}
+This project is under following licenses (**OR**) :
+
+* [{{ licenses.primary }}][main_license]
+  {%- for license in licenses.secondaries %}
+* [{{ license }}][{{ license | lower }}_license]
+  {%- endfor -%}
+{% else -%}
+This project is under [{{ licenses.primary }}][main_license].
+{% endif %}
+
+[main_license]: {{ licenseURL }}
+{% if "secondaries" in licenses and licenses.secondaries | length > 0 -%}
+  {%- for license in licenses.secondaries -%}
+[{{ license | lower }}_license]: {{ project.baseURL }}/{{ project.slug }}/blob/main/LICENSE.{{ license }}
+  {%- endfor -%}
+{%- endif %}

@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+
+REPO_DIR=$(git rev-parse --show-toplevel)
+DIR=$(mktemp -d)
+QUESTION="${REPO_DIR}/copier/questions/gitignore.yaml"
+
+git clone https://github.com/github/gitignore "${DIR}"
+
+cat >"${QUESTION}" <<EOF
+---
+gitignore:
+  type: str
+  multiselect: true
+  help: |
+    Select gitignore template to use. This list is extracted from this repo:
+    https://github.com/github/gitignore
+  default:
+    - Global/Vim
+    - Global/Archives
+    - Global/Backup
+    - Global/Cursor
+    - Global/Diff
+    - Global/Emacs
+    - Global/JetBrains
+    - Global/Linux
+    - Global/macOS
+    - Global/PuTTY
+    - Global/Vim
+    - Global/VisualStudioCode
+    - Global/Xcode
+  choices:
+EOF
+
+for tpl in $(find "${DIR}" -name '*.gitignore' |
+  sed \
+    -e "s/${DIR//\//'\/'}\///g" \
+    -e "s/.gitignore$//g" |
+  sort -u); do
+
+  echo "    - ${tpl}" >>"${QUESTION}"
+done
+
+rm -rf "${DIR}"
