@@ -5,8 +5,8 @@
 # https://docs.gitlab.com/ee/ci/yaml/README.html#workflow
 workflow:
   rules:
-      # Do not run CI when commit title have following chars anywhere
-      # WIP, NO-CI or 🚧 (gitmoji for "work in progress", aka :construction:)
+    # Do not run CI when commit title have following chars anywhere
+    # WIP, NO-CI or 🚧 (gitmoji for "work in progress", aka :construction:)
     - if: $CI_COMMIT_MESSAGE =~ /(wip|WIP|NO-CI|🚧|:construction:)/
       when: never
     - if: $CI_MERGE_REQUEST_TITLE =~ /^(D|d)raft:/
@@ -24,25 +24,15 @@ variables:
 
 stages:
   - pre-ci
-  - pre-lint
   - lint
-  - post-lint
-  - pre-build
   - build
-  - post-build
-  - pretest
   - test
-  - post-test
-  - pre-release
   - release
-  - post-release
-  - pre-deploy
   - deploy
-  - post-deploy
   - post-ci
 
 # Fake jobs that simply exit 0 to enable CI
-"Dumb Job - Exit 0":
+Dumb Job - Exit 0:
   image: alpine:latest
   stage: pre-ci
   script:

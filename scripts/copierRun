@@ -55,9 +55,6 @@ commit() {
     fi
   done
 
-  echo "============================"
-  echo $PWD
-  echo "============================"
   if ! git diff --quiet; then
     # shellcheck disable=2086
     echo "${msg}"
