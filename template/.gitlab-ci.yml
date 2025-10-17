@@ -23,22 +23,11 @@ variables:
   FF_SCRIPT_SECTIONS: true
 
 stages:
-  - pre-ci
-  - pre-lint
   - lint
-  - post-lint
-  - pre-build
   - build
-  - post-build
-  - pretest
   - test
-  - post-test
-  - pre-release
   - release
-  - post-release
-  - pre-deploy
   - deploy
-  - post-deploy
   - post-ci
 
 # Fake jobs that simply exit 0 to enable CI
