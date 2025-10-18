@@ -68,8 +68,8 @@ uv install tool \
     copier
 # Run copier
 copier copy \
-    -a \
     --trust \
+    -a \
     .copier.yaml \
     git+https://framagit.org/rdeville-public/programs/copier-generic-template \
     ./
@@ -93,8 +93,8 @@ uv run tool \
     --with jinja2-jsonschema \
     --with requests \
     copier copy \
-    -a \
     --trust \
+    -a \
     .copier.yaml \
     git+https://framagit.org/rdeville-public/programs/copier-generic-template \
     ./
