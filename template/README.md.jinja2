@@ -42,7 +42,7 @@ This project is under following licenses (**OR**) :
   {%- endfor -%}
 {% else -%}
 This project is under [{{ licenses.primary }}][main_license].
-{% endif %}
+{% endif -%}
 
 [main_license]: {{ licenseURL }}
 {% if "secondaries" in licenses and licenses.secondaries | length > 0 -%}

@@ -115,26 +115,35 @@ repository:
   `copierRun`)
 
 To use the fully automatic git repository automation, first **TAKE THE TIME TO
-LOOK AT ABOVE SCRIPTS** since the command use `curl | bash`.
+LOOK AT ABOVE SCRIPTS** since the command use `curl` then `bash`.
 
 Then, simply use the following command:
 
 <!-- markdownlint-disable MD013-->
+
 ```bash
+# Get the script to /tmp/gitInit
 curl \
   https://framagit.org/rdeville-public/programs/copier-generic-template/-/raw/main/scripts/gitInit \
-  | bash -
+  > /tmp/gitInit
+# READ THE CONTENT OF THE SCRIPT BEFORE MAKING IT EXECUTABLE!!
+chmod +x /tmp/gitInit
+# Run the script
+/tmp/gitInit
 ```
+
 <!-- markdownlint-enable MD013-->
 
 You will be asked if you read the content of those scripts before continuing,
-since using `curl | bash` can lead do desastrous behaviour.
+since using `curl` then `bash` or `curl | bash` can lead do desastrous
+behaviour.
 
 Imagine someone with bad intention gaining access and modifying those scripts to
 put the following command in the script: `sudo rm -rf /`. This will end with the
 wipeout of your system!
 
-**SO, ALWAYS BE CAREFUL WHEN USING COMMAND OF THE FORM `curl | bash`**
+**SO, ALWAYS BE CAREFUL WHEN USING COMMAND OF THE FORM `curl` then `bash` or
+curl | bash`**
 
 [copierRun]: ./scripts/copierRun
 [gitInit]: ./scripts/gitInit
