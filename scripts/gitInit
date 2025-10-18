@@ -47,6 +47,7 @@ _copier_init() {
     --with requests \
     copier \
     copy \
+    --trust \
     -a \
     "${copier_cfg//"${PWD}/"/}" \
     git+https://framagit.org/rdeville-public/programs/copier-generic-template \
