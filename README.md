@@ -69,6 +69,7 @@ uv install tool \
 # Run copier
 copier copy \
     -a \
+    --trust \
     .copier.yaml \
     git+https://framagit.org/rdeville-public/programs/copier-generic-template \
     ./
@@ -93,6 +94,7 @@ uv run tool \
     --with requests \
     copier copy \
     -a \
+    --trust \
     .copier.yaml \
     git+https://framagit.org/rdeville-public/programs/copier-generic-template \
     ./
