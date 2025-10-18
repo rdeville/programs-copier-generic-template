@@ -1,14 +1,20 @@
 #!/usr/bin/env bash
 
+COMMIT_FIRST=(
+  "📄 <TPL:ACTION> LICENSES from copier template,LICENSE*"
+  "🔨 <TPL:ACTION> pre-commit configuration from copier template,.pre-commit-config.yaml"
+  "🔨 <TPL:ACTION> gitlab-ci configuration from copier template,.gitlab-ci.yml .gitlab-ci/*"
+  "🙈 <TPL:ACTION> gitignore from copier template,.gitignore"
+)
+
 COMMIT=(
   "🔨 <TPL:ACTION> pre-commit configuration from copier template,.pre-commit-config.yaml"
-  "📄 <TPL:ACTION> LICENSES from copier template,LICENSE*"
   "📝 <TPL:ACTION> README from copier template,README.md"
-  "🙈 <TPL:ACTION> gitignore from copier template,.gitignore"
   "🔧 <TPL:ACTION> commitlint config from copier template,.commitlintrc.ts"
   "🔨 <TPL:ACTION> yaml related configuration from copier template,.yamllint .yamlfmt"
   "🔨 <TPL:ACTION> editorconfig configuration from copier template,.editorconfig"
   "🔧 <TPL:ACTION> copier sync configuration,.copier.yaml"
+  "🔧 <TPL:ACTION> markdown lint configuration,.markdownlint.jsonc"
 )
 
 COMMIT_FORCE=(
@@ -55,7 +61,7 @@ commit() {
     fi
   done
 
-  if ! git diff --quiet; then
+  if ! git diff --staged --quiet; then
     # shellcheck disable=2086
     echo "${msg}"
     # Retry once in case pre-commit apply formatter
@@ -66,18 +72,37 @@ commit() {
 }
 
 process_commit() {
-  for commit in "${COMMIT_FORCE[@]}"; do
+  for commit in "${COMMIT_FIRST[@]}"; do
     files="${commit#*,}"
 
     msg_fmt
     commit "force"
   done
 
+  if ! command -v pre-commit &>/dev/null; then
+    local pythonVenv=/tmp/venv/copier
+    python3 -m venv "${pythonVenv}"
+    # shellcheck disable=SC1091
+    source "${pythonVenv}/bin/activate"
+    pip install pre-commit
+    "${PWD}/.devbox/init_hook/pre-commit.sh"
+    deactivate
+  else
+    "${PWD}/.devbox/init_hook/pre-commit.sh"
+  fi
+
   for commit in "${COMMIT[@]}"; do
     files="${commit#*,}"
 
     msg_fmt
     commit
+  done
+
+  for commit in "${COMMIT_FORCE[@]}"; do
+    files="${commit#*,}"
+
+    msg_fmt
+    commit "force"
   done
 }
 

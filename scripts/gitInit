@@ -47,9 +47,9 @@ _copier_init() {
     --with requests \
     copier \
     copy \
-    --trust \
-    "${opts[@]}" \
-    https://framagit.org/rdeville-public/programs/copier-generic-template \
+    -a \
+    "${copier_cfg//"${PWD}/"/}" \
+    git+https://framagit.org/rdeville-public/programs/copier-generic-template \
     "${PWD}"
   deactivate
 }
@@ -81,16 +81,21 @@ main() {
   init_logger
 
   local copier_cfg="${PWD}/.copier.yaml"
-  local opts
+  local opts tmp
+
+  _log "WARNING" "THIS SCRIPT CALL ANOTHER SCRIPT USING CURL !"
+  _log "WARNING" "Have you read the content of these scripts and want to continue ?"
+  _log "WARNING" "Type 'yes' or 'Yes' to continue"
+  read -r answer
+  if ! [[ "${answer}" =~ (Yes|yes) ]]; then
+    _log "INFO" "Stopping the script execution."
+  fi
 
   _git_init
-  if [[ -f "${copier_cfg}" ]]; then
-    opts=(
-      "-a"
-      "${copier_cfg//"${PWD}/"/}"
-    )
-  fi
   _copier_init
+
+  curl https://framagit.org/rdeville-public/programs/copier-generic-template/-/raw/main/scripts/copierRun |
+    bash -s -- copy
 
   return
 }
