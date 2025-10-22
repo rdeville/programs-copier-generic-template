@@ -3,18 +3,21 @@
 COMMIT_FIRST=(
   "📄 <TPL:ACTION> LICENSES from copier template,LICENSE*"
   "🔨 <TPL:ACTION> pre-commit configuration from copier template,.pre-commit-config.yaml"
-  "🔨 <TPL:ACTION> gitlab-ci configuration from copier template,.gitlab-ci.yml .gitlab-ci/*"
+  "👷 <TPL:ACTION> gitlab-ci configuration from copier template,.gitlab-ci.yml .gitlab/*"
   "🙈 <TPL:ACTION> gitignore from copier template,.gitignore"
 )
 
 COMMIT=(
   "🔨 <TPL:ACTION> pre-commit configuration from copier template,.pre-commit-config.yaml"
   "📝 <TPL:ACTION> README from copier template,README.md"
+  "📝 <TPL:ACTION> CODE OF CONDUCT from copier template,CODE_OF_CONDUCT.md"
+  "📝 <TPL:ACTION> CONTRIBUTING from copier template,CONTRIBUTING.md"
   "🔧 <TPL:ACTION> commitlint config from copier template,.commitlintrc.ts"
   "🔨 <TPL:ACTION> yaml related configuration from copier template,.yamllint .yamlfmt"
   "🔨 <TPL:ACTION> editorconfig configuration from copier template,.editorconfig"
-  "🔧 <TPL:ACTION> copier sync configuration,.copier.yaml"
-  "🔧 <TPL:ACTION> markdown lint configuration,.markdownlint.jsonc"
+  "🔧 <TPL:ACTION> copier answer configuration,.copier.yaml"
+  "🔧 <TPL:ACTION> markdown lint configuration,.markdownlint.jsonc .markdownlintignore"
+  "🔧 <TPL:ACTION> python semantic release configuration,releaserc.toml .release/*"
 )
 
 COMMIT_FORCE=(

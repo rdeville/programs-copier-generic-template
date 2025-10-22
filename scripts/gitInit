@@ -95,7 +95,7 @@ main() {
   _git_init
   _copier_init
 
-  curl https://framagit.org/rdeville-public/programs/copier-generic-template/-/raw/main/scripts/copierRun |
+  curl https://framagit.org/rdeville-public/programs/copier-generic-template/-/raw/main/scripts/copierCommit |
     bash -s -- copy
 
   return
