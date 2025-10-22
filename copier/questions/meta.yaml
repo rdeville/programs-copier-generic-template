@@ -43,3 +43,38 @@ copyright:
     mail: jon.doe@domain.tld
     ```
   validator: "{{ copyright | jsonschema('schemas/copyright.json') }}"
+
+maintainers:
+  type: yaml
+  multiline: true
+  help: |
+    A set of key values respecting schema in 'jsonschema/maintainers.json' to
+    specify maintainers of the repository.
+    For instance:
+    ```
+    - name: Jon Doe
+      mail: jon.doe@domain.tld
+    - name: Jane Doe
+      mail: jane.doe@anotherdomain.tld
+    ```
+  validator: "{{ maintainers | jsonschema('schemas/maintainers.json') }}"
+
+abuse_mail_code_of_conduct:
+  type: str
+  help: |
+    The mail address to contact in case of abuse according to the CODE OF CONDUCT
+
+security:
+  type: yaml
+  multiline: true
+  help: |-
+    Information about the security team. Will be used at lease in CONTRIBUTING.
+    Should be respecting schema in 'jsonschema/security.json'.
+    For instance:
+    ```
+    mail: security@domain.tld
+    GPGPublic: |
+      -----BEGIN PGP PUBLIC KEY BLOCK-----
+      ...
+      -----END PGP PUBLIC KEY BLOCK-----
+    ```

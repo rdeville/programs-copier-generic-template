@@ -1,0 +1,38 @@
+{
+  "$id": "maintainers",
+  "title": "maintainers",
+  "description": "Schema to validate maintainers key in copier",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "required": [
+        "name",
+        "mail"
+      ],
+      "name": {
+        "type": "string"
+      },
+      "mail": {
+        "type": "string"
+      },
+      "social": {
+        "type": "object",
+        "properties": {
+          "github": {
+            "type": "string"
+          },
+          "gitlab": {
+            "type": "string"
+          },
+          "linkedin": {
+            "type": "string"
+          },
+          "framagit": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

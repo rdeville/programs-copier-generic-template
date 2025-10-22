@@ -25,6 +25,33 @@
 
 ---
 
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+
+Feel free to check [issues page][issues_pages].
+
+You can also take a look at the [CONTRIBUTING.md][contributing].
+
+[issues_pages]: {{ project.issueURL }}
+[contributing]: ./CONTRIBUTING.md
+
+## 👤 Maintainers
+
+<!-- markdownlint-disable -->
+{%- for maintainer in maintainers %}
+* 📧 [**{{ maintainer.name }}** \<{{ maintainer.mail }}\>](mailto:{{ maintainer.mail }})
+  {%- if "social" in maintainer %}
+  Social: {% for profile in maintainer.social -%}
+  {%- if "github" in profile and profile.github %} ![fa-github](https://raw.githubusercontent.com/FortAwesome/Font-Awesome/refs/heads/6.x/svgs/brands/github-alt.svg){%- endif -%}
+  {%- if "gitlab" in profile and profile.gitlab %} ![fa-gitlab](https://raw.githubusercontent.com/FortAwesome/Font-Awesome/refs/heads/6.x/svgs/brands/gitlab.svg){%- endif -%}
+  {%- if "framagit" in profile and profile.framagit %} ![fa-gitlab](https://raw.githubusercontent.com/FortAwesome/Font-Awesome/refs/heads/6.x/svgs/brands/gitlab.svg){%- endif -%}
+  {%- if "linkedin" in profile and profile.linkedin %} ![fa-linkedin](https://raw.githubusercontent.com/FortAwesome/Font-Awesome/refs/heads/6.x/svgs/brands/linkedin.svg){%- endif -%}
+  {%- endfor %}
+  {%- endif %}
+{%- endfor %}
+<!-- markdownlint-enable -->
+
 ## 📝 License
 
 {% if licenses.date.firstYear | string == '%Y' | strftime -%}

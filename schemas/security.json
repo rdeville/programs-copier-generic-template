@@ -1,0 +1,17 @@
+{
+  "$id": "security",
+  "title": "security",
+  "description": "Schema to validate security information key in copier",
+  "type": "object",
+  "required": [
+    "mail"
+  ],
+  "properties": {
+    "mail": {
+      "type": "string"
+    }
+    "GPGPublic": {
+      "type": "string"
+    }
+  }
+}

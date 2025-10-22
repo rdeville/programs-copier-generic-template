@@ -1,4 +1,14 @@
 ---
+match_type: doublestar
+include:
+  - "**.yaml"
+  - "**.yml"
+  - ".yamlfmt"
+  - ".yamllint"
+exclude:
+  - "**gitlab-ci.yaml"
+  - "**.gitlab-ci.yml"
+
 formatter:
   type: basic
   include_document_start: true

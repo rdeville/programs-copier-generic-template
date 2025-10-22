@@ -1,6 +1,8 @@
 {
   "$schema": "https://raw.githubusercontent.com/jetpack-io/devbox/main/.schema/devbox.schema.json",
   "packages": {
+    "pre-commit": "latest",
+    "yq-go": "latest",
     "python": "latest",
     "uv": "latest"
   },
@@ -9,9 +11,10 @@
   },
   "shell": {
     "init_hook": [
+      "./.devbox/init_hook/pre-commit.sh",
       "source $VENV_DIR/bin/activate",
       "uv tool install \\",
-      "  --with jinja2-time \\", 
+      "  --with jinja2-time \\",
       "  --with copier-template-extensions \\",
       "  --with jinja2-jsonschema \\",
       "  --with requests \\",
