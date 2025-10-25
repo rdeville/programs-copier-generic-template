@@ -2,6 +2,40 @@
 
 <!-- version list -->
 
+## v0.4.0 (2025-10-25)
+
+### ⚡️
+
+- ⚡️(tpl/base): Add gitlab-ci for yamllint
+  ([`f36e8ee`](https://framagit.org/rdeville-public/programs/copier-generic-template/-/commit/f36e8eeb1a3f155d054d65b9ce4ade4f0aee80c5))
+
+### ✨
+
+- ✨(copier/questions): Add new templates questions (terragrunt, sops, kubernetes)
+  ([`a154147`](https://framagit.org/rdeville-public/programs/copier-generic-template/-/commit/a1541475781bb8b6ab303d3a2a5969bb34f17ff8))
+
+- ✨(tpl): Add bunch of new templates (terragrunt, sops, kubernetes) (!12)
+  ([`ce28be2`](https://framagit.org/rdeville-public/programs/copier-generic-template/-/commit/ce28be2e6b4dff9aa10f7f5293b496d043530a03))
+
+- ✨(tpl): Update files for new templates (terragrunt, sops, kubernetes)
+  ([`402ef7d`](https://framagit.org/rdeville-public/programs/copier-generic-template/-/commit/402ef7d1fa2e20cb316fd1cbe5455a5af903faad))
+
+### 🌱
+
+- 🌱 Update commit ref for copier answer to next release
+  ([`7dc78a1`](https://framagit.org/rdeville-public/programs/copier-generic-template/-/commit/7dc78a117d94fcc1d17b384faacb6d0e40dc8ce7))
+
+### 👷
+
+- 👷(gitlab-ci): Add yamllint CI from copier template
+  ([`40f995d`](https://framagit.org/rdeville-public/programs/copier-generic-template/-/commit/40f995de16ba55a7d613fa232532780a98a9f9d0))
+
+### 🔧
+
+- 🔧(devbox): Update devbox.json from copier template
+  ([`4cced8f`](https://framagit.org/rdeville-public/programs/copier-generic-template/-/commit/4cced8f05e9246af0176c7b08cd3ca7286d0cbf6))
+
+
 ## v0.3.0 (2025-10-25)
 
 ### ⚡️
