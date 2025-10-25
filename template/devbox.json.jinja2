@@ -3,6 +3,10 @@
   "packages": {
     "pre-commit": "latest",
     "yq-go": "latest",
+    {%- if "opentofu" in templates %}
+    "opentofu": "latest",
+    "terraform-docs": "latest"
+    {%- endif %}
   },
   "shell": {
     "init_hook": [
