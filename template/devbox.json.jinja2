@@ -22,6 +22,9 @@
     "kubernetes-helm": "latest",
     "helm-docs": "latest",
     {%- endif %}
+    {%- if "gcloud" in templates %}
+    "path:.devbox/flakes/gcloud#google-cloud-sdk": ""
+    {%- endif %}
   },
   "env": {
     {%- if "kubernetes" in templates %}
