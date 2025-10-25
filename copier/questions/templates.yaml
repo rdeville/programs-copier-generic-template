@@ -14,3 +14,11 @@ ci_engine:
   default: gitlab
   choices:
     - gitlab
+
+templates:
+  type: str
+  multiselect: true
+  help: |
+    Select project templates to install
+  choices:
+    - opentofu
