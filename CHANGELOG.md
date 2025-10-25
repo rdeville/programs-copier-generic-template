@@ -2,6 +2,55 @@
 
 <!-- version list -->
 
+## v0.3.0 (2025-10-25)
+
+### ⚡️
+
+- ⚡️(tpl/opentofu): Update some existing template file with opentofu template
+  ([`ad99a32`](https://framagit.org/rdeville-public/programs/copier-generic-template/-/commit/ad99a3251d95779c52cc811ceb3e00f7d9e6adaa))
+
+### ✨
+
+- ✨(copier/questions): Add CI engine question
+  ([`a0024de`](https://framagit.org/rdeville-public/programs/copier-generic-template/-/commit/a0024de4321321583dc842f93ea25bc908ef4cce))
+
+- ✨(copier/questions): Add template question with opentofu possible response
+  ([`85f6571`](https://framagit.org/rdeville-public/programs/copier-generic-template/-/commit/85f657173ddfbcd3312364ad805ba92a1241174f))
+
+- ✨(copier/tasks): Add tasks to clean files if opentofu template not used
+  ([`8bcbe50`](https://framagit.org/rdeville-public/programs/copier-generic-template/-/commit/8bcbe50649aa87855fe15803e0987a5f6902a3cb))
+
+- ✨(copier/tasks): Add tasks to remove generated gitlab CI if not selected
+  ([`b55bf93`](https://framagit.org/rdeville-public/programs/copier-generic-template/-/commit/b55bf93bfcc15be301d9e1fe27ee6cf579b516e9))
+
+- ✨(tpl): Introduce CI engine and start introduce project template (opentofu) (!11)
+  ([`6b3f6d0`](https://framagit.org/rdeville-public/programs/copier-generic-template/-/commit/6b3f6d03f01bb36a0918f34e763acae1ba2b73f1))
+
+- ✨(tpl/opentofu): Add new template for opentofu
+  ([`7db5bee`](https://framagit.org/rdeville-public/programs/copier-generic-template/-/commit/7db5beef1a31e567f9225877e832e68483f3ce43))
+
+### 🌱
+
+- 🌱 Update commit ref for copier answer to next release
+  ([`02a2c17`](https://framagit.org/rdeville-public/programs/copier-generic-template/-/commit/02a2c179ee8826c4f0bf4ddcd80b997dbe7836a4))
+
+### 🔧
+
+- 🔧(copier): Add tasks inclusion in copier configuration
+  ([`f9654f2`](https://framagit.org/rdeville-public/programs/copier-generic-template/-/commit/f9654f26e714e38db8fff7578e1127c82d2d913b))
+
+- 🔧(pre-commit): Update pre-commit from template
+  ([`ef2c31b`](https://framagit.org/rdeville-public/programs/copier-generic-template/-/commit/ef2c31b29307fb21a42051bc484163a8734e9c56))
+
+### 🚨
+
+- 🚨(markdownlint): Update markdownlint ignored files from copier template
+  ([`62ea500`](https://framagit.org/rdeville-public/programs/copier-generic-template/-/commit/62ea5009e551d5773e9215cd3d08fb95e1aae499))
+
+- 🚨(tpl/base): Add CHANGELOG.md to markdown ignore list
+  ([`81fbe1c`](https://framagit.org/rdeville-public/programs/copier-generic-template/-/commit/81fbe1c9cd064bfaeb8d37d56ee1bb55d00bfec9))
+
+
 ## v0.2.0 (2025-10-22)
 
 ### ⚡️
