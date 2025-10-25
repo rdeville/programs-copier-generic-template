@@ -1,0 +1,4 @@
+---
+_tasks:
+  - when: "{{ ci_engine != \"gitlab\" }}"
+    command: rm -rf .gitlab .gitlab-ci.yml
