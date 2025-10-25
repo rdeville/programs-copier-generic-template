@@ -1,0 +1,20 @@
+---
+_tasks:
+  # CI Engines
+  # ===========================================================================
+  - when: "{{ ci_engine != \"gitlab\" }}"
+    command:
+      - rm
+      - -rf
+      - .gitlab
+      - .gitlab-ci.yml
+  # Templates Cleaning
+  # ===========================================================================
+  # Opentofu
+  # ---------------------------------------------------------------------------
+  - when: "{{ \"opentofu\" not in templates }}"
+    command:
+      - rm
+      - -rf
+      - .terraform-docs.yml
+      - .gitlab/opentofu

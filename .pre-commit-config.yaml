@@ -34,8 +34,8 @@ repos:
     rev: v0.18.0
     hooks:
       - id: yamlfmt
-        exclude: (.*gitlab-ci.y?aml)
-        files: (.yamlfmt|.yamllint|.*.y?aml)
+        exclude: (.*gitlab-ci.y?aml)$
+        files: (.yamlfmt|.yamllint|.*.y?aml)$
   - repo: https://github.com/adrienverge/yamllint.git
     rev: v1.37.1
     hooks:

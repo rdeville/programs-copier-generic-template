@@ -1,8 +1,9 @@
 ---
 # Changes here will be overwritten by Copier
-_commit: v0.2.0
+_commit: v0.3.0
 _src_path: git+https://framagit.org/rdeville-public/programs/copier-generic-template
 abuse_mail_code_of_conduct: abuse@romaindeville.fr
+ci_engine: gitlab
 copyright:
   mail: code@romaindeville.fr
   name: Romain Deville
@@ -36,3 +37,4 @@ project:
   slug: copier-generic-template
 security:
   mail: security@romaindeville.fr
+templates: []
