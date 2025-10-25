@@ -22,3 +22,6 @@ templates:
     Select project templates to install
   choices:
     - opentofu
+    - terragrunt
+    - sops
+    - kubernetes
