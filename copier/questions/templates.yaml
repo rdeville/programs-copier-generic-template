@@ -1,0 +1,16 @@
+---
+ci_engine:
+  type: str
+  multiselect: false
+  help: |
+    For which CI system (Github Workflow, Gitlab CI, etc) to you want to install
+    templates ?
+
+    WARNING!!!
+    For now, only Gitlab CI is supported.
+    I may add Github Workflow later, but this is not sure.
+    Feel free to contribute if you want to add your CI engine.
+    I'll be glad to help
+  default: gitlab
+  choices:
+    - gitlab
