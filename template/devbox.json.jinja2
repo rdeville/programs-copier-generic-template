@@ -5,12 +5,38 @@
     "yq-go": "latest",
     {%- if "opentofu" in templates %}
     "opentofu": "latest",
-    "terraform-docs": "latest"
+    "terraform-docs": "latest",
+    {%- endif %}
+    {%- if "terrragrunt" in templates %}
+    "terragrunt": "latest",
+    {%- endif %}
+    {%- if "sops" in templates %}
+    "sops": "latest",
+    "age": "latest",
+    {%- endif %}
+    {%- if "kubernetes" in templates %}
+    "kubectl": "latest",
+    "kubectx": "latest",
+    "stern": "latest",
+    "krew": "latest",
+    "kubernetes-helm": "latest",
+    "helm-docs": "latest",
+    {%- endif %}
+  },
+  "env": {
+    {%- if "kubernetes" in templates %}
+    "HELM_PLUGIN_DIR": "${DEVBOX_PROJECT_ROOT}/.devbox/cache/helm/plugins",
     {%- endif %}
   },
   "shell": {
     "init_hook": [
       "./.devbox/init_hook/pre-commit.sh",
+    {%- if "kubernetes" in templates %}
+      "if ! helm plugin list | grep -q secrets; then helm plugin install https://github.com/jkroepke/helm-secrets; fi",
+      "if ! helm plugin list | grep -q unittest; then helm plugin install https://github.com/helm-unittest/helm-unittest; fi",
+      "if ! helm plugin list | grep -q diff; then helm plugin install https://github.com/databus23/helm-diff; fi",
+      "export PATH=\"${KREW_ROOT:-$HOME/.krew}/bin:$PATH\"",
+    {%- endif %}
     ]
   }
 }
