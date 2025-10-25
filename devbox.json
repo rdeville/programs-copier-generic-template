@@ -9,6 +9,8 @@
   "env": {
     "VENV_DIR": ".devbox/venv/copier"
   },
+  "env": {
+  },
   "shell": {
     "init_hook": [
       "./.devbox/init_hook/pre-commit.sh",
