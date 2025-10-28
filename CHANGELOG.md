@@ -2,6 +2,27 @@
 
 <!-- version list -->
 
+## v0.5.0 (2025-10-28)
+
+### ✨
+
+- ✨ Add gcloud template and add template to copier questions (!13)
+  ([`eefe1f1`](https://framagit.org/rdeville-public/programs/copier-generic-template/-/commit/eefe1f196b888b45fd9ac130f81d8ddff70b63ab))
+
+- ✨(tpl): Add gcloud templated file
+  ([`f73b313`](https://framagit.org/rdeville-public/programs/copier-generic-template/-/commit/f73b3133328c6dc8576a5ad77918682a512604fc))
+
+### 🔧
+
+- 🔧(copier/questions): Add gcloud to copier questions about template to install
+  ([`ac918bd`](https://framagit.org/rdeville-public/programs/copier-generic-template/-/commit/ac918bd195739f21804e0b23d8b8bd35ddc12172))
+
+### 🙈
+
+- 🙈 Exclude template/.devbox from gitignore
+  ([`fa9cf6f`](https://framagit.org/rdeville-public/programs/copier-generic-template/-/commit/fa9cf6f03aea8d6719e52cbccb110ec86bc81bb7))
+
+
 ## v0.4.0 (2025-10-25)
 
 ### ⚡️
