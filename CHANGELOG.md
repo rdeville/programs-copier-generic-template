@@ -2,6 +2,17 @@
 
 <!-- version list -->
 
+## v0.5.1 (2025-10-30)
+
+### ⚡️
+
+- ⚡️(tpl/gcloud): Add task to delete gcluod tpl related files if not used
+  ([`3877c77`](https://framagit.org/rdeville-public/programs/copier-generic-template/-/commit/3877c775252b201bb01c83df24a4443a315f3a85))
+
+- ⚡️(tpl/gcloud): Add task to delete gcluod tpl related files if not used (!14)
+  ([`68f8b55`](https://framagit.org/rdeville-public/programs/copier-generic-template/-/commit/68f8b557fa21857f00e86e9926a3fa8675f2b683))
+
+
 ## v0.5.0 (2025-10-28)
 
 ### ✨
