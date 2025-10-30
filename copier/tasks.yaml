@@ -18,3 +18,13 @@ _tasks:
       - -rf
       - .terraform-docs.yml
       - .gitlab/opentofu
+  # Gcloud
+  # ---------------------------------------------------------------------------
+  - when: "{{ \"gcloud\" not in templates }}"
+    command:
+      - rm
+      - -rf
+      - .devbox/flakes/gcloud
+      - "&&"
+      - rmdir
+      - .devbox/flakes
